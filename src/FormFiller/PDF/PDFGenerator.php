@@ -92,7 +92,7 @@ class PDFGenerator {
         // writing fields, if value not defined defaults to blank string
         $this->writeFields($this->fields, $this->data, $sizes[$this->size]);
 
-        // generated path, default is
+        // path and name of the temporary pdf that is created, default is set to /tmp/temp.pdf
         $generated = empty($tempPathAndName) ? getcwd() . "/tmp/temp.pdf" : $tempPathAndName;
 
         $this->fpdf->Output("F", $generated, true);
@@ -101,7 +101,8 @@ class PDFGenerator {
         $this->merge($formPath, $generated, $dest);
 
         // clean generated not merged
-        unlink($generated);
+        // cleaning will be done after the output is created
+        // unlink($generated);
 
         return true;
     }
