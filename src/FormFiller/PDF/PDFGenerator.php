@@ -74,7 +74,7 @@ class PDFGenerator {
      * @return bool
      * @throws \Exception
      */
-    public function start(string $formPath, string $dest, string $fontName = 'Arial', string $fontSize = '12', string $fontStyle = 'B') {
+    public function start(string $formPath, string $dest, string $tempPathAndName = '', string $fontName = 'Arial', string $fontSize = '12', string $fontStyle = 'B') {
         $this->fpdf = new FPDF($this->orientation, $this->unit, $this->size);
 
         $this->fpdf->SetMargins(10, 10, 10);
@@ -92,8 +92,8 @@ class PDFGenerator {
         // writing fields, if value not defined defaults to blank string
         $this->writeFields($this->fields, $this->data, $sizes[$this->size]);
 
-        // generated path
-        $generated = getcwd() . "/tmp/temp.pdf";
+        // path and name of the temporary pdf that is created, default is set to /tmp/temp.pdf
+        $generated = empty($tempPathAndName) ? getcwd() . "/tmp/temp.pdf" : $tempPathAndName;
 
         $this->fpdf->Output("F", $generated, true);
 
@@ -101,7 +101,8 @@ class PDFGenerator {
         $this->merge($formPath, $generated, $dest);
 
         // clean generated not merged
-        unlink($generated);
+        // cleaning will be done after the output is created
+        // unlink($generated);
 
         return true;
     }

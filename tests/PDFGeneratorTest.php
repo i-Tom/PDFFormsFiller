@@ -47,10 +47,11 @@ final class PDFGeneratorTest extends TestCase
         if(file_exists($dest))
             unlink($dest);
 
+        $tempPdfPath = $fakePDFPath . '/tmp/temp123.pdf';
 
         $pdfGenerator = new PDFGenerator($fieldEntities, $this->getFakeData(), 'P', 'pt', 'A4');
 
-        if($pdfGenerator->start($original, $dest)) {
+        if($pdfGenerator->start($original, $dest, $tempPdfPath)) {
             $this->assertEquals(true, file_exists($dest));
         }
 
