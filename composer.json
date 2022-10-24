@@ -1,7 +1,7 @@
 {
-    "name": "ghostfly/pdf-forms-filler",
-    "description": "Fill Acrobat forms easily using pure PHP ! 💪",
-    "homepage": "https://github.com/Ghostfly/PDFFormsFiller",
+    "name": "tomi/pdf-forms-filler",
+    "description": "Fill Acrobat forms easily using pure PHP",
+    "homepage": "https://github.com/i-Tom/PDFFormsFiller",
     "keywords": ["php","pdf", "forms", "fill", "filler"],
     "type": "library",
     "require": {
