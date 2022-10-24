@@ -9,21 +9,21 @@
 [![License](https://poser.pugx.org/ghostfly/pdf-forms-filler/license)](https://packagist.org/packages/ghostfly/pdf-forms-filler)
 [![composer.lock](https://poser.pugx.org/ghostfly/pdf-forms-filler/composerlock)](https://packagist.org/packages/ghostfly/pdf-forms-filler)
 
-Fill Acrobat forms easily using pure PHP ! 💪
+Fill Acrobat forms easily using pure PHP
 
 ## Requirements
 - PHP >= 7.1.0
 
 ## Install :
 ```
-$ composer require ghostfly/pdf-forms-filler
+$ composer require tomi/pdf-forms-filler
 ```
 
 ## Example :
 - clone repository
 - go to example folder
 - composer install
-- run [index.php](https://github.com/Ghostfly/PDFFormsFiller/blob/master/example/index.php)
+- run [index.php](https://github.com/i-Tom/PDFFormsFiller/blob/master/example/index.php)
 
 ## Usage :
 You need to do a PDF Form with Acrobat, and the string to convert is given by this page :
@@ -54,7 +54,7 @@ If your original PDF is not handled by fpdf, you can convert it using this servi
 
 Don't care about form fields on file to send to generator, the locations are determined using the latest PDF format. 
 
-If you need a full example : [index.php](https://github.com/Ghostfly/PDFFormsFiller/blob/master/example/index.php).
+If you need a full example : [index.php](https://github.com/i-Tom/PDFFormsFiller/blob/master/example/index.php).
 
 ## Tests
 ```
