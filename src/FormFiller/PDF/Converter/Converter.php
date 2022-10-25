@@ -125,7 +125,7 @@ class Converter {
     private function findPageForField($count){
         foreach($this->pages as $p => $page){
             // if count don't exceed our page fields count, it's there.
-            if($count <= $page){
+            if($count < $page){
                 return $p;
             }
         }
