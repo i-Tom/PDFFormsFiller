@@ -18,7 +18,7 @@ final class ConverterTest extends TestCase
     /**
      * @var Converter $converter
      */
-    protected $converter;
+    protected Converter $converter;
 
     /**
      * Setup the current test suite
@@ -51,11 +51,13 @@ TAG
 , $coords);
     }
 
-    /**
-     * Test if page is find for defined field
-     * @uses Reflection
-     * @covers FormFiller\PDF\Converter\Converter::findPageForField()
-     */
+	/**
+	 * Test if page is find for defined field
+	 *
+	 * @throws ReflectionException
+	 * @uses   Reflection
+	 * @covers FormFiller\PDF\Converter\Converter::findPageForField()
+	 */
     public function testPageFindForField(){
         $foo = self::getMethod('findPageForField');
         $page = $foo->invokeArgs($this->converter, ["2"]);
@@ -67,7 +69,7 @@ TAG
      *
      * @return string
      */
-    private function getFakeData(){
+    private function getFakeData(): string {
         return "3 widget annotations found on page 1.
 ----------------------------------------------
 
@@ -98,14 +100,15 @@ phone:
   height: 17.933";
     }
 
-    /**
-     * Allow to use (and test) private methods
-     *
-     * @param $name
-     *
-     * @return ReflectionMethod
-     */
-    protected static function getMethod($name) {
+	/**
+	 * Allow to use (and test) private methods
+	 *
+	 * @param $name
+	 *
+	 * @return ReflectionMethod
+	 * @throws ReflectionException
+	 */
+    protected static function getMethod($name): ReflectionMethod {
         $class = new ReflectionClass('FormFiller\PDF\Converter\Converter');
         $method = $class->getMethod($name);
         $method->setAccessible(true);

@@ -62,7 +62,7 @@ final class PDFGeneratorTest extends TestCase
      *
      * @return array
      */
-    private function getFakeData(){
+    private function getFakeData(): array {
         return [
             'cat_name'    => [
                 "size"  => 67,

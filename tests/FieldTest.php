@@ -26,7 +26,7 @@ final class FieldTest extends TestCase
             $fieldEntities[] = Field::fieldFromArray($field);
         }
 
-        $this->assertEquals(3, count($fieldEntities));
+        $this->assertCount( 3, $fieldEntities );
     }
 
     /**

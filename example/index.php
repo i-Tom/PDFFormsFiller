@@ -1,4 +1,5 @@
 <?php
+/** @noinspection DuplicatedCode */
 require __DIR__ . '/vendor/autoload.php';
 
 use FormFiller\PDF\Converter\Converter;
